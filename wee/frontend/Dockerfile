@@ -23,4 +23,4 @@ WORKDIR /app/frontend
 RUN npx nx build frontend
 EXPOSE 3001
 
-CMD ["npx", "nx", "start", "frontend", "--verbose"]
+CMD ["npx", "nx", "start", "frontend", "--port", "3001", "--verbose"]
