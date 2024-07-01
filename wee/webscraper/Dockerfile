@@ -18,9 +18,14 @@ RUN npm install
 
 COPY ../webscraper ./webscraper
 COPY ../webscraper/.eslintrc.json ./webscraper/.eslintrc.json
-WORKDIR /app/webscraper
+# WORKDIR /app/webscraper
 
-RUN npx nx build webscraper --skip-nx-cache
+# RUN npx nx build webscraper --skip-nx-cache --configuration=production
+
+# WORKDIR /app/dist/apps/webscraper
+
+# WORKDIR /app/dist/webscraper
+
 EXPOSE 3000
 
-CMD ["npx", "nx", "serve", "webscraper", "--port", "3000", "--verbose"]
+CMD ["npx", "nx", "serve", "webscraper", "--skip-nx-cache", "--configuration=production", "--port", "3000", "--verbose"]
