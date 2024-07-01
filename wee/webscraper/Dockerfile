@@ -20,6 +20,7 @@ COPY ../webscraper ./webscraper
 COPY ../webscraper/.eslintrc.json ./webscraper/.eslintrc.json
 WORKDIR /app/webscraper
 
+RUN npx nx build webscraper --skip-nx-cache
 EXPOSE 3000
 
 CMD ["npx", "nx", "serve", "webscraper", "--port", "3000", "--verbose"]
